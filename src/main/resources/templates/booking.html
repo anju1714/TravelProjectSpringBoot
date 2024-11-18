@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Information</title>
+</head>
+<body>
+    <h1>Available Bookings</h1>
+
+    <h2>Hotels</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Hotel Name</th>
+                <th>Address</th>
+                <th>Rooms Available</th>
+                <th>Price per Night</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="hotel : ${hotels}">
+                <td th:text="${hotel.name}"></td>
+                <td th:text="${hotel.address}"></td>
+                <td th:text="${hotel.roomsAvailable}"></td>
+                <td th:text="${hotel.pricePerNight}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Cabs</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Cab Model</th>
+                <th>Driver</th>
+                <th>Price per Hour</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="cab : ${cabs}">
+                <td th:text="${cab.model}"></td>
+                <td th:text="${cab.driverName}"></td>
+                <td th:text="${cab.pricePerHour}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Trains</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Train Number</th>
+                <th>Train Name</th>
+                <th>Available Seats</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="train : ${trains}">
+                <td th:text="${train.trainNumber}"></td>
+                <td th:text="${train.trainName}"></td>
+                <td th:text="${train.availableSeats}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
